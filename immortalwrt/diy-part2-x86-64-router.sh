@@ -240,6 +240,10 @@ config_package_add kmod-usb-net-rndis
 config_package_add kmod-usb-net-ipheth
 
 #### 第三方软件包
+# 一个适用于官方openwrt(22.03/23.05/24.10) firewall4的turboacc
+curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
+config_package_add luci-app-turboacc
+
 # Transparent Proxy with Mihomo on OpenWrt
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/nikki
 config_package_add luci-app-nikki
@@ -283,9 +287,9 @@ config_package_add luci-app-taskplan
 ## 分区扩容。一键自动格式化分区、扩容、自动挂载插件，专为OPENWRT设计，简化OPENWRT在分区挂载上烦锁的操作
 config_package_add luci-app-partexp
 #设置向导
-config_package_add luci-app-netwizard
+#config_package_add luci-app-netwizard
 #网络速度测试
-config_package_add luci-app-netspeedtest
+#config_package_add luci-app-netspeedtest
 
 ## iStore 应用市场 只支持 x86_64 和 arm64 设备
 ##git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
