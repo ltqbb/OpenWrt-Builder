@@ -149,7 +149,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # 添加编译时间到版本信息
 sed -i "s/DISTRIB_DESCRIPTION='.*'/DISTRIB_DESCRIPTION='${REPO_NAME} ${OpenWrt_VERSION} ${OpenWrt_ARCH} Built on $(date +%Y%m%d)'/" package/base-files/files/etc/openwrt_release
 # 添加编译时间到 /etc/banner
-echo "Build Time: $(date +%Y%m%d)" >> package/base-files/files/etc/banner
+sed -i '$ i\\Build Time: '"$(date +%Y%m%d)"'' package/base-files/files/etc/banner
 
 #### 镜像生成
 # 修改分区大小
