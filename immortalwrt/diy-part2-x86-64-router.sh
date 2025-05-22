@@ -243,8 +243,8 @@ config_package_add kmod-usb-net-ipheth
 
 #### 第三方软件包
 # 一个适用于官方openwrt(22.03/23.05/24.10) firewall4的turboacc
-curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
-config_package_add luci-app-turboacc
+#curl -sSL https://raw.githubusercontent.com/chenmozhijin/turboacc/luci/add_turboacc.sh -o add_turboacc.sh && bash add_turboacc.sh --no-sfe
+#config_package_add luci-app-turboacc
 
 # Transparent Proxy with Mihomo on OpenWrt
 git clone https://github.com/nikkinikki-org/OpenWrt-nikki.git package/nikki
