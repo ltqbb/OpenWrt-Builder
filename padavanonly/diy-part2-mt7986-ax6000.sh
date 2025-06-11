@@ -127,8 +127,10 @@ config_package_add luci-app-easytier
 git clone https://github.com/gdy666/luci-app-lucky.git package/lucky
 config_package_add luci-app-lucky
 
-git_sparse_clone main https://github.com/kenzok8/small-package luci-app-adguardhome
+# adguardhome 文件管理fileassistant
+git_sparse_clone main https://github.com/kenzok8/small-package luci-app-adguardhome luci-app-fileassistant
 config_package_add luci-app-adguardhome
+config_package_add luci-app-fileassistant
 
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
