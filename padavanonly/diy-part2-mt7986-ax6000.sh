@@ -152,4 +152,4 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 config_package_add luci-app-taskplan
 config_package_add luci-lib-ipkg
 #网络速度测试
-config_package_add luci-app-netspeedtest
+#config_package_add luci-app-netspeedtest
