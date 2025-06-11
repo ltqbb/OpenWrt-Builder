@@ -93,6 +93,8 @@ sed -i 's/encryption=none/encryption=psk2/' package/mtk/applications/mtwifi-cfg/
 sed -i "/encryption=psk2/a\\\t\t\t\t\tset wireless.default_\${dev}.key=password" package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 
 #### 新增
+# sing-box内核支持
+config_package_add kmod-netlink-diag
 # bbr
 config_package_add kmod-tcp-bbr
 # autocore + lm-sensors-detect： cpu 频率、温度

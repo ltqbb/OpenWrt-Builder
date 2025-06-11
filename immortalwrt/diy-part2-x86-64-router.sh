@@ -192,6 +192,8 @@ config_package_del luci-app-rclone_INCLUDE_rclone-ng
 #### 新增
 # Firmware
 config_package_add intel-microcode
+# sing-box内核支持
+config_package_add kmod-netlink-diag
 # luci
 config_package_add luci
 config_package_add default-settings-chn
