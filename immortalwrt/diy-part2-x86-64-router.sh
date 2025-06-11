@@ -149,7 +149,7 @@ sed -i 's/192.168.1.1/192.168.10.1/g' package/base-files/files/bin/config_genera
 # 添加编译时间到版本信息
 sed -i "s/DISTRIB_DESCRIPTION='.*'/DISTRIB_DESCRIPTION='${REPO_NAME} ${OpenWrt_VERSION} ${OpenWrt_ARCH} Built on $(date +%Y%m%d)'/" package/base-files/files/etc/openwrt_release
 # 添加编译时间到 /etc/banner
-sed -i '$ i\\ Build Time: '"$(date +%Y%m%d)"'' package/base-files/files/etc/banner
+#sed -i '$ i\\ Build Time: '"$(date +%Y%m%d)"'' package/base-files/files/etc/banner
 
 #### 镜像生成
 # 修改分区大小
@@ -283,17 +283,20 @@ clean_packages package/custom
 # golang
 rm -rf feeds/packages/lang/golang
 mv package/custom/golang feeds/packages/lang/
+
 # argon 主题
 config_package_add luci-theme-argon
 sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+
 # 定时任务。重启、关机、重启网络、释放内存、系统清理、网络共享、关闭网络、自动检测断网重连、MWAN3负载均衡检测重连、自定义脚本等10多个功能
 config_package_add luci-app-taskplan
+config_package_add luci-lib-ipkg
 ## 分区扩容。一键自动格式化分区、扩容、自动挂载插件，专为OPENWRT设计，简化OPENWRT在分区挂载上烦锁的操作
 config_package_add luci-app-partexp
 #设置向导
 #config_package_add luci-app-netwizard
 #网络速度测试
-config_package_add luci-app-netspeedtest
+#config_package_add luci-app-netspeedtest
 
 ## iStore 应用市场 只支持 x86_64 和 arm64 设备
 ##git_sparse_clone main https://github.com/Lienol/openwrt-package luci-app-filebrowser luci-app-ssr-mudb-server
