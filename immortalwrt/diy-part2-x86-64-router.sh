@@ -200,7 +200,7 @@ config_package_add default-settings-chn
 # bbr
 config_package_add kmod-tcp-bbr
 # coremark cpu 跑分
-config_package_add coremark
+# config_package_add coremark
 # autocore + lm-sensors-detect： cpu 频率、温度
 config_package_add autocore
 config_package_add lm-sensors-detect
@@ -224,7 +224,7 @@ config_package_add luci-app-mwan3
 # kms
 config_package_add luci-app-vlmcsd
 # smartdns
-config_package_add luci-app-smartdns
+# config_package_add luci-app-smartdns
 # 应用过滤
 #config_package_add luci-app-appfilter
 
